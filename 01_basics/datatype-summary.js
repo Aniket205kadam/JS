@@ -64,3 +64,23 @@ console.log(myObj)
 //+++++++++++++++++++++++++++++ Stack and Heap memory ++++++++++++++++++++++++++++++++++++
 
 // Stack (Primitive), Heap (Non-Primitive)
+
+let myUsername = "aniket205kadam";
+
+let anotherName = myUsername;
+anotherName = "aniket-kadam";
+
+console.log("\n" + anotherName);
+console.log(myUsername);
+
+let userOne = {
+    email: "user@google.com",
+    upi: "user@bl"
+}
+
+let userTwo = userOne;
+
+userTwo.email = "aniket@google.com"
+
+console.log(userOne)
+console.log(userTwo)
