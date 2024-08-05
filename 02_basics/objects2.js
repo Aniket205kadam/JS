@@ -42,8 +42,8 @@ const obj4 = {...obj1, ...obj2} //{ '1': 'a', '2': 'b', '3': 'a', '4': 'b' }
 
 const obj6 = Object.assign({}, obj1, obj2)
 
-console.log(obj6);//{ '1': 'a', '2': 'b', '3': 'a', '4': 'b' }
-console.log(obj1);//{ '1': 'a', '2': 'b' }
+// console.log(obj6);//{ '1': 'a', '2': 'b', '3': 'a', '4': 'b' }
+// console.log(obj1);//{ '1': 'a', '2': 'b' }
 
 
 const users = [
@@ -61,14 +61,40 @@ const users = [
     }
 ]
 
-console.log(users[1].email)
+// console.log(users[1].email)
 
-console.log(tinderUser);
+// console.log(tinderUser);
 
 
-console.log(Object.keys(tinderUser)); //return the array
-console.log(Object.values(tinderUser));
-console.log(Object.entries(tinderUser));
+// console.log(Object.keys(tinderUser)); //return the array
+// console.log(Object.values(tinderUser));
+// console.log(Object.entries(tinderUser));
 
-console.log(tinderUser.hasOwnProperty('IsLoggedIn')); //true
-console.log(tinderUser.hasOwnProperty('IsLogged')); //false
+// console.log(tinderUser.hasOwnProperty('IsLoggedIn')); //true
+// console.log(tinderUser.hasOwnProperty('IsLogged')); //false
+
+//++++++++++ Object de-structure +++++++++++++++++
+
+const course = {
+    coursename: "js",
+    price: "999",
+    courseInstructor: "hitesh"
+}
+//repeatedly write the course ref
+// console.log("Course name:", course.coursename);
+// console.log("Course price:", course.price);
+// console.log("Course Instructor:", course.courseInstructor);
+
+//Object de-structure
+const {courseInstructor: instructor} = course
+
+console.log(instructor);//hitesh
+
+//++++++++++ JSON API +++++++++++++++++
+
+// {
+//     "name": "aniket",
+//     "coursename": "js",
+//     "price": "free"
+// }
+
