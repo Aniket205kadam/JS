@@ -97,4 +97,3 @@ console.log(instructor);//hitesh
 //     "coursename": "js",
 //     "price": "free"
 // }
-
