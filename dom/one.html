@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM learning</title>
+    <style>
+        body {
+            background-color: #212121;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-black">
+        <h1 id="title" class="heading">DOM learning on Chai aur code <span style="display: none;">test text</span></h1>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <h2>Lorem, ipsum dolor.</h2>
+        <h2>Lorem, ipsum dolor.</h2>
+        <h2>Lorem, ipsum dolor.</h2>
+
+        <input type="password" name="password" id="password">
+
+        <ul>
+            <li class="list-item">one</li>
+            <li class="list-item">two</li>
+            <li class="list-item">three</li>
+            <li class="list-item">four</li>
+        </ul>
+    </div>
+</body>
+</html>
+
+<!-- DOM => Document Object Model -->
+<!-- ALl DOM selectors NodeList and HTMLCollection -->
+
+<!--
+1. document.getElementById(id)
+
+Purpose: Selects an element based on its unique id attribute.
+Returns: A single Element object or null if no element with the specified id is found.
+Notes:
+id attributes must be unique within a document, so this method always returns a single element.
+
+2. document.getElementsByClassName(className)
+
+Purpose: Selects all elements that have a specific class attribute.
+Returns: A live HTMLCollection of elements (similar to an array, but not exactly) that match the specified class name.
+Notes:
+The returned HTMLCollection is live, meaning it automatically updates if elements with the specified class are added or removed from the DOM.
+You can access elements in the collection using array-like indexing (e.g., elements[0]), but it is not a true array.
+
+3. document.querySelector(selector)
+Purpose: Selects the first element that matches a specified CSS selector.
+Returns: A single Element object or null if no matching element is found.
+Notes:
+This method is more versatile as it can accept any valid CSS selector, such as class names, ids, attributes, pseudo-classes, and more.
+It only returns the first matching element, even if multiple elements match the selector.
+
+4. document.querySelectorAll(selector)
+Purpose: Selects all elements that match a specified CSS selector.
+Returns: A static (non-live) NodeList of elements that match the selector.
+Notes:
+The NodeList is static, meaning it does not automatically update when the DOM changes.
+Unlike HTMLCollection, NodeList supports array methods like forEach(), but it is still not a true array. You can convert it to an array if needed.
+
+Summary of Differences
+getElementById(id): Retrieves a single element by its unique id.
+getElementsByClassName(className): Retrieves all elements with a specific class as a live HTMLCollection.
+querySelector(selector): Retrieves the first element that matches a CSS selector.
+querySelectorAll(selector): Retrieves all elements that match a CSS selector as a static NodeList.
+-->
+
+<!--When we say that a NodeList is static, it means that the list of elements returned by methods like document.querySelectorAll() is a snapshot of the DOM at the time the method was called. If the DOM changes after the NodeList is created (e.g., elements are added, removed, or modified), the NodeList does not automatically reflect those changes.-->
+
+<!--
+No, the HTMLCollection is not static; it is live. This means that an HTMLCollection automatically updates to reflect changes in the DOM.-->
