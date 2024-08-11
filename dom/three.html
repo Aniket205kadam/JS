@@ -1,0 +1,43 @@
+<!-- create a new element in DOM -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur code</title>
+    <style>
+        body{
+            background-color: #212121;
+            color: #FFFFFF;
+        }
+    </style>
+ </head>
+ <body>
+    
+ </body>
+ <script>
+    const div = document.createElement('div');
+    // console.log(div);
+    div.className = "main";
+    div.id = Math.round(Math.random() * 10 + 1);
+    div.setAttribute("title", "chai aur code");
+    div.style.backgroundColor = "green";
+    div.style.padding = "10px";
+    // div.innerHTML = "chai aur code";
+    const addText = document.createTextNode("Chai Aur Code");
+    div.appendChild(addText);
+    // console.log(div);
+
+    //attach to the document
+    document.body.appendChild(div);
+ </script>
+ </html>
+
+ <!--
+  div.setAttribute("title", "chai aur code"); => value ko direct set kar deta hai ///so ye apan ek round bachata hai
+  div.style.backgroundColor = "green"; => ye value ko override karta hai matlab first value ko le ke aata hai bad me new value ko send kar ta hai///so isake badale ham
+  const addText = document.createTextNode("Chai Aur Code");
+    div.appendChild(addText);
+
+    ///ye use karte hai
+ -->

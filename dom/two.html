@@ -1,0 +1,59 @@
+<!-- create a new element in DOM -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur code</title>
+    <style>
+        body {
+            background-color: #212121;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+         <!-- this is a comment -->
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>   
+</body>
+<script>
+    //parent => child
+    const parent = document.querySelector('.parent');
+    // console.log(parent);
+    // console.log(typeof parent);
+    
+    // console.log(parent);
+    // console.log(parent.children); //HTMLCollection
+    // console.log(parent.children[1].innerHTML); //Tuesday
+
+    // for (let i = 0; i < parent.children.length; i++) {
+    //     console.log(parent.children[i].innerHTML);
+        
+    // }
+    parent.children[1].style.color = 'orange';
+    // console.log(parent.firstElementChild); //<div class="day">Monday</div>
+    // console.log(parent.lastElementChild); //<div class="day">Thursday</div>
+
+    //child => parent
+    
+    const dayOne = document.querySelector('.day');
+    // console.log(dayOne); //<div class="day">Monday</div>
+    // console.log(dayOne.parentElement);
+    // console.log(dayOne.nextElementSibling);
+    
+    console.log("NODES: ", parent.childNodes);
+    
+</script>
+</html>
+
+<!-- 
+html me ek line break to count hota hai magar usake badha aap kitane bhi dijiye wo brower me render nahi hote
+
+!-- this is a comment --
+this comment also count this increase the two node, first one is comment and second one is line break
+-->
