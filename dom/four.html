@@ -1,0 +1,66 @@
+<!-- Edit and remove elements in DOM -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur Code</title>
+    <style>
+        body{
+            background-color: #414141;
+            color: #FFFFFF;
+        }
+    </style>
+ </head>
+ <body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+ </body>
+ <script>
+    function addLanguage(languageName) {
+        const li = document.createElement('li')
+        li.innerHTML = `${languageName}`
+        document.querySelector('.language').appendChild(li)
+    }
+
+    addLanguage("Java")
+    addLanguage("Python")
+
+    //this is more optimize becauese we not need to travel all the tree
+    function addOptiLanguage(languageName) {
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(languageName))
+        document.querySelector('.language').appendChild(li)
+    }
+
+    addOptiLanguage('golang')
+
+    //Edit
+    const secondLang = document.querySelector('li:nth-child(3)')
+    // console.log(secondLang);
+    //secondLang.innerHTML = 'Kotlin';
+    //second approch
+    const newLi = document.createElement('li')
+    newLi.innerHTML = 'Kotlin';
+
+    secondLang.replaceWith(newLi);
+    
+    //edit
+    const fourLi = document.querySelector('li:nth-child(4)');
+    // console.log(fourLi);
+    // fourLi.innerHTML = 'Python';
+    fourLi.outerHTML = '<li>Python</li>';
+    // const newFourLi = document.createElement('li');
+    // newFourLi.appendChild(document.createTextNode("Python"));
+
+    // fourLi.replaceWith(newFourLi);
+
+    //remove
+    const lastLang = document.querySelector('li:last-child');
+    // console.log(lastLang);
+    lastLang.remove();
+    
+    
+ </script>
+ </html>
