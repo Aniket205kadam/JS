@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code</title>
+</head>
+<body>
+    <h1>Chai aur Javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+
+    const printTime = function(str) {
+        console.log(str)
+        console.log('Current Time: ', new Date().toLocaleTimeString())
+    }
+
+    // const intervalId = setInterval(printTime, 1000, 'Aniket')
+    let intervalId = null
+    document.querySelector('#start').addEventListener('click', (event) => {
+        intervalId = setInterval(printTime, 1000, 'Aniket')
+        console.log('Start print time')
+    })
+
+    document.querySelector('#stop').addEventListener('click', (event) => {
+        clearInterval(intervalId)
+        console.log('Stop printing Time')
+    })
+</script>
+</html>
