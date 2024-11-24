@@ -101,7 +101,7 @@ setInterval(updateTime, 1000)
 
 ```
 
-## project 4 => => GusserGame
+## project 4 => GusserGame
 
 ```javascript
 
@@ -196,5 +196,71 @@ function newGame() {
     playGame = true;
   });
 }
+
+```
+
+## project 5 => keyboard
+
+```javascript
+
+const insert = document.getElementById('insert')
+
+window.addEventListener('keydown', (event) => {
+    insert.innerHTML = `
+        <div class='color'>
+           <table>
+            <tr>
+                <th>Key</th>
+                <th>Keycode</th>
+                <th>code</th>
+            </tr>
+            <tr>
+                <td>${event.key === " " ? "Space" : event.key}</td>
+                <td>${event.keyCode}s</td>
+                <td>${event.code}</td>
+            </tr>
+            </table> 
+        </div>
+    `
+})
+
+```
+
+## project 6 => UnlimitedColors
+
+```javascript
+
+// generate a random color
+
+const randomColor = function() {
+    const hex = '0123456789ABCDEF'
+    let color = '#'
+
+    for (let i = 0; i < 6; i++) {
+        color += hex[Math.floor(Math.random() * 16)]
+    }
+    return color
+}
+
+const changeBackground = function() {
+    // change background color
+    document.body.style.backgroundColor = randomColor()
+}
+
+let intervalId = null; 
+document.querySelector('#start').addEventListener('click', (event) => {
+    if (intervalId === null) {
+        intervalId = setInterval(changeBackground, 1000)
+    }
+    document.body.style.color = '#FFFFFF'
+})
+
+document.querySelector('#stop').addEventListener('click', (event)=> {
+    document.body.style.backgroundColor = '#FFFFFF'
+    document.body.style.color = '#000000'
+    clearInterval(intervalId)
+    intervalId = null
+})
+
 
 ```
