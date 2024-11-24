@@ -1,0 +1,58 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #4CAF50;
+    color: white;
+}
+
+main {
+    padding: 20px;
+}
+
+/* Gallery Styles */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.gallery-item {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    width: 300px;
+    text-align: center;
+}
+
+.gallery-item img {
+    width: 100%; /* Make the image fill the container's width */
+    height: 200px; /* Set a fixed height for all images */
+    object-fit: cover; /* Ensure images retain aspect ratio and fill the area */
+    display: block;
+}
+
+.gallery-item p {
+    padding: 10px;
+    font-size: 16px;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
