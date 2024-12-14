@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+<body style="background-color: #313131;">
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+</body>
+<script>
+    // function init() {
+    //     let name = "Mozilla";
+    //     function displayName() {
+    //         console.log(name);
+    //     }
+    //     displayName();
+    // }
+    // init();
+
+    // function outer() {
+    //     let username = "aniket";
+    //     function inner() {
+    //         // Lexical scoping
+    //         let secret = "my123";
+    //         console.log("INNER: ", username);
+    //     }
+
+    //     function innerTwo() {
+    //         console.log("innerTwo: ", username);
+    //         // child function parent function se properties le sakate hai magar sibling function se properties nahi le sakate hai
+    //         console.log("innerTwo secret value: ", secret); // error: secret is not defined
+    //     }
+
+    //     inner();
+    //     innerTwo();
+    //     console.log("Outer secret", secret);
+    // }
+    // outer();
+    // // chlid function ke properties parent function nahi access kar sakte hai
+    // console.log("TO OURER: ", username);
+
+    function makeFunc() {
+        const name = "Mozilla";
+        function displayName() {
+            console.log("Inner function console: ", name);
+        }
+        return displayName; // yha pe inner function hai nahi jata hai outer function ka scope bhi jata hai // uska pura lexical scope jata hai
+    }
+
+    const myFunc = makeFunc();
+    myFunc();
+
+    // Closure -> when we are send the function then not send the only the function also send the outer function scope (lexical scope)
+
+</script>
+<script>
+    // document.getElementById("orange").onclick = function() {
+    //     document.body.style.backgroundColor = "orange";
+    // }
+    // document.getElementById("green").onclick = function() {
+    //     document.body.style.backgroundColor = "green";
+    // }
+
+    // function clickHandler(color) {
+    //     document.body.style.backgroundColor = `${color}`;
+    // }
+
+    // document.getElementById('orange').onclick = clickHandler("orange") //bina click kare hi clickHandler() function execute ho ja raha hai
+    // document.getElementById('orange').onclick = clickHandler("green") //bina click kare hi clickHandler() function execute ho ja raha hai
+    // ye direct execute ho raha hai
+
+    // solution
+
+    function clickHandler(color) {
+        return function() {
+            document.body.style.backgroundColor = `${color}`;
+        }
+    }
+
+    document.getElementById('orange').onclick = clickHandler("orange");
+    document.getElementById('green').onclick = clickHandler("green");
+
+
+</script>
+</html>
